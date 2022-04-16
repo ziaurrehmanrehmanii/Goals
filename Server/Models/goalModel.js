@@ -3,6 +3,11 @@ const mongoose = require("mongoose");
 
 const goalsSchema = mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
     text: {
       type: "string",
       required: [true, "Plase Add a text Value"],

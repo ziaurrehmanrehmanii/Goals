@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require(`dotenv`).config();
 const Colors = require("Colors");
 const goalsRoute = require(`./Routes/goalsRoute`);
+const usersRoute = require(`./Routes/usersRoutes`);
 const { errorHandler } = require("./Middleware/errorMiddleware");
 const connectDB = require("./Config/DB");
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use("/app/goals", goalsRoute);
+app.use("/app/users", usersRoute);
 
 // MiddleWare After The Routs
 // ErrorMidleware
