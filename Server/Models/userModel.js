@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema(
       required: [true, "please add a name"],
     },
     email: {
-      type: string,
+      type: "string",
       required: [true, "please add a email"],
       unique: true,
     },
@@ -18,4 +18,4 @@ const userSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.Schema(User, userSchema);
+module.exports = mongoose.model("user", userSchema);
